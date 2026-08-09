@@ -98,21 +98,26 @@ function App() {
         );
     }
 
-    if (loading) {
-        return (
-            <div className="loading-screen">
-                <div className="loading-icon">
+            if (loading) {
+            return (
+                <div className="loading-screen">
+                <div className="loading-card">
+                    <div className="loading-icon">
                     💊
+                    </div>
+
+                    <div className="loading-spinner"></div>
+
+                    <h2>Preparing your memory game</h2>
+
+                    <p>
+                    Loading medication cards...
+                    </p>
                 </div>
-
-                <h2>Loading drugs...</h2>
-
-                <p>
-                    Loading drug information from RxNorm.
-                </p>
-            </div>
-        );
-    }
+                </div>
+            );
+            }
+ 
 
     if (error) {
         return (
@@ -154,16 +159,16 @@ function App() {
                     bestScore={bestScore}
                 />
             </section>
+            <GameMessage
+                gameOver={gameOver}
+                onNewGame={newGame}
+            />
 
             <CardGrid
                 drugs={drugs}
                 onCardClick={handleCardClick}
             />
 
-            <GameMessage
-                gameOver={gameOver}
-                onNewGame={newGame}
-            />
 
             <footer>
                 <p>
