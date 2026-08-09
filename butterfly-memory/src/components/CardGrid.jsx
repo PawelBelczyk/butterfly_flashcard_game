@@ -1,12 +1,12 @@
 import Card from "./Card";
 
-function CardGrid({ butterflies, onCardClick }) {
+function CardGrid({ drugs, onCardClick }) {
     return (
         <main className="card-grid">
-            {butterflies.map((butterfly) => (
+            {drugs.map((drug) => (
                 <Card
-                    key={butterfly.id}
-                    butterfly={butterfly}
+                    key={drug.id}
+                    drug={drug}
                     onClick={onCardClick}
                 />
             ))}

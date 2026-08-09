@@ -1,20 +1,20 @@
-function Card({ butterfly, onClick }) {
+function Card({ drug, onClick }) {
     return (
         <button
             className="card"
-            onClick={() => onClick(butterfly.id)}
+            onClick={() => onClick(drug.id)}
         >
-            <div className="image-wrapper">
+            <div className="card-image">
                 <img
-                    src={butterfly.image}
-                    alt={butterfly.species}
+                    src={drug.image}
+                    alt=""
                 />
             </div>
 
-            <div className="card-info">
-                <h2>{butterfly.species}</h2>
+            <div className="card-content">
+                <h3>{drug.name}</h3>
 
-                <p>{butterfly.scientificName}</p>
+                <p>RxCUI: {drug.rxcui}</p>
             </div>
         </button>
     );

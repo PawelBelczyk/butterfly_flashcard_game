@@ -5,22 +5,18 @@ function GameMessage({ gameOver, onNewGame }) {
 
     return (
         <div className="game-message">
-            <div className="message-card">
-                <div className="large-butterfly">🦋</div>
+            <h2>Game Over 💊</h2>
 
-                <h2>Game Over!</h2>
+            <p>
+                You clicked the same drug twice.
+            </p>
 
-                <p>
-                    You clicked a butterfly you had already selected.
-                </p>
-
-                <button
-                    className="new-game-button"
-                    onClick={onNewGame}
-                >
-                    Play Again
-                </button>
-            </div>
+            <button
+                className="new-game-button"
+                onClick={onNewGame}
+            >
+                New Game
+            </button>
         </div>
     );
 }
