@@ -6,10 +6,10 @@
       aria-label={drug.name}
     >
       <div className="card-image">
-        <img
-          src={drug.image}
-          alt={drug.name}
-        />
+    <img
+  src={`${import.meta.env.BASE_URL}drugs/${imageName}.png`}
+  alt={drug.name}
+/>
       </div>
 
       <div className="card-glow"></div>

@@ -2,8 +2,7 @@
   "name": "butterfly-memory",
   "private": true,
   "version": "0.0.0",
-    "homepage": "https://pawelbelczyk.github.io/butterfly-memory/",
-
+  "homepage": "https://pawelbelczyk.github.io/butterfly-memory/",
   "type": "module",
   "scripts": {
     "dev": "vite",
