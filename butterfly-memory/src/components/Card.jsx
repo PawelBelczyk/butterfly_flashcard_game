@@ -4,12 +4,11 @@ function Card({ drug, onClick }) {
             className="card"
             onClick={() => onClick(drug.id)}
         >
-            <div className="card-image">
-                <img
-                    src={drug.image}
-                    alt=""
-                />
-            </div>
+            <img
+                src={drug.image}
+                alt={drug.name}
+                className="card-image"
+            />
 
             <div className="card-content">
                 <h3>{drug.name}</h3>
