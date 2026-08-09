@@ -173,6 +173,12 @@ function App() {
             <footer>
                 <p>
                     Drug data provided by RxNorm.
+                    <p>
+
+                    Project done by <strong>Paweł Belczyk</strong>
+                    
+                    </p>
+                    <p>Contact: <strong>belczykp@gmail.com</strong></p>
                 </p>
             </footer>
         </div>
