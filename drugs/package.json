@@ -2,8 +2,7 @@
   "name": "butterfly-memory",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://pawelbelczyk.github.io/butterfly-memory/",
-  "type": "module",
+"homepage": "https://pawelbelczyk.github.io/butterfly_flashcard_game/",  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
