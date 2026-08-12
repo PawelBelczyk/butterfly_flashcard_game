@@ -1,18 +1,20 @@
 function Card({ drug, onClick }) {
-  return (
-    <button
-      className="card"
-      onClick={() => onClick(drug.id)}
-      aria-label={drug.name}
-    >
-      <img
-        src={`${import.meta.env.BASE_URL}${drug.image.replace(/^\//, "")}`}
-        alt={drug.name}
-      />
+    return (
+        <button
+            className="card"
+            onClick={() => onClick(drug.id)}
+            aria-label={drug.name}
+        >
+            <div className="card-image">
+                <img
+                    src={`${import.meta.env.BASE_URL}${drug.image.replace(/^\//, "")}`}
+                    alt={drug.name}
+                />
+            </div>
 
-      <div className="card-glow"></div>
-    </button>
-  );
+            <div className="card-glow"></div>
+        </button>
+    );
 }
 
 export default Card;
