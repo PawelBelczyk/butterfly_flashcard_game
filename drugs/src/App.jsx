@@ -154,7 +154,7 @@ function App() {
             <Header />
 
             <section className="game-header">
-                <div>0
+                <div>
                     <h2>
                         Can you remember them all?
                     </h2>
