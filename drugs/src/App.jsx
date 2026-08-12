@@ -41,6 +41,8 @@ function App() {
 
     const [error, setError] = useState(null);
 
+    const [won, setWon] = useState(false);
+
     useEffect(() => {
         async function loadDrugs() {
             try {
@@ -57,34 +59,41 @@ function App() {
         loadDrugs();
     }, []);
 
-    function handleCardClick(id) {
-        if (gameOver) {
-            return;
-        }
 
-        if (clickedDrugs.includes(id)) {
-            setGameOver(true);
-            setScore(0);
-            return;
-        }
+            function handleCardClick(id) {
+                if (gameOver || won) {
+                    return;
+                }
 
-        const newScore = score + 1;
+                if (clickedDrugs.includes(id)) {
+                    setGameOver(true);
+                    setScore(0);
+                    return;
+                }
 
-        setScore(newScore);
+                const newScore = score + 1;
 
-        setClickedDrugs((current) => [
-            ...current,
-            id,
-        ]);
+                setScore(newScore);
 
-        if (newScore > bestScore) {
-            setBestScore(newScore);
-        }
+                setClickedDrugs((current) => [
+                    ...current,
+                    id,
+                ]);
 
-        setDrugs((current) =>
-            shuffleCards(current)
-        );
-    }
+                if (newScore > bestScore) {
+                    setBestScore(newScore);
+                }
+
+                // WYGRANA 12/12
+                if (newScore === 12) {
+                    setWon(true);
+                    return;
+                }
+
+                setDrugs((current) =>
+                    shuffleCards(current)
+                );
+            }
 
     function newGame() {
         setScore(0);
@@ -92,6 +101,8 @@ function App() {
         setClickedDrugs([]);
 
         setGameOver(false);
+
+        setWon(false);
 
         setDrugs((current) =>
             shuffleCards(current)
@@ -143,7 +154,7 @@ function App() {
             <Header />
 
             <section className="game-header">
-                <div>
+                <div>0
                     <h2>
                         Can you remember them all?
                     </h2>
@@ -161,6 +172,7 @@ function App() {
             </section>
             <GameMessage
                 gameOver={gameOver}
+                won={won}
                 onNewGame={newGame}
             />
 

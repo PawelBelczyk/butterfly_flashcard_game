@@ -1,6 +1,4 @@
 function Card({ drug, onClick }) {
-  const imageName = drug.name.toLowerCase();
-
   return (
     <button
       className="card"
@@ -8,7 +6,7 @@ function Card({ drug, onClick }) {
       aria-label={drug.name}
     >
       <img
-        src={`${import.meta.env.BASE_URL}drugs/${imageName}.png`}
+        src={`${import.meta.env.BASE_URL}${drug.image.replace(/^\//, "")}`}
         alt={drug.name}
       />
 

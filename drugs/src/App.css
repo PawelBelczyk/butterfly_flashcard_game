@@ -1134,3 +1134,239 @@ transition-duration: 0.01ms !important;
  
 }
 }
+/* ==================================================
+VICTORY SCREEN
+================================================== */
+
+.victory-overlay {
+backdrop-filter: blur(12px);
+}
+
+.victory-modal {
+position: relative;
+overflow: hidden;
+padding: 48px 42px 42px;
+border: 1px solid rgba(255, 215, 90, 0.35);
+background:
+radial-gradient(
+circle at 50% 0%,
+rgba(255, 215, 90, 0.12),
+transparent 45%
+),
+rgba(15, 18, 28, 0.97);
+box-shadow:
+0 25px 80px rgba(0, 0, 0, 0.55),
+0 0 60px rgba(255, 200, 60, 0.12);
+}
+
+/* Delikatna poświata */
+
+.victory-glow {
+position: absolute;
+width: 220px;
+height: 220px;
+top: -110px;
+left: 50%;
+transform: translateX(-50%);
+background: rgba(255, 215, 90, 0.18);
+border-radius: 50%;
+filter: blur(55px);
+pointer-events: none;
+}
+
+/* Trofeum */
+
+.victory-icon {
+position: relative;
+width: 86px;
+height: 86px;
+margin: 0 auto 22px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-size: 46px;
+
+border-radius: 50%;
+
+background:
+linear-gradient(
+145deg,
+rgba(255, 225, 120, 0.18),
+rgba(255, 190, 50, 0.06)
+);
+
+border: 1px solid rgba(255, 215, 90, 0.35);
+
+box-shadow:
+0 0 30px rgba(255, 205, 70, 0.18);
+
+animation: victoryFloat 3s ease-in-out infinite;
+}
+
+@keyframes victoryFloat {
+0%,
+100% {
+transform: translateY(0);
+}
+
+50% {
+transform: translateY(-7px);
+}
+}
+
+/* Napis PERFECT SCORE */
+
+.victory-label {
+color: #f5c84b;
+letter-spacing: 0.22em;
+font-weight: 800;
+}
+
+/* Główny napis */
+
+.victory-modal h2 {
+margin: 8px 0 10px;
+
+font-size: clamp(32px, 5vw, 44px);
+font-weight: 800;
+letter-spacing: -0.03em;
+
+background: linear-gradient(
+135deg,
+#ffffff,
+#ffe99a
+);
+
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+/* Tekst */
+
+.victory-text {
+margin: 0;
+color: rgba(255, 255, 255, 0.68);
+font-size: 16px;
+}
+
+/* ==================================================
+12 / 12
+================================================== */
+
+.final-score-box {
+display: flex;
+align-items: baseline;
+justify-content: center;
+gap: 8px;
+
+margin: 28px auto 8px;
+padding: 18px 30px;
+
+width: fit-content;
+
+border-radius: 18px;
+
+background: rgba(255, 215, 90, 0.07);
+border: 1px solid rgba(255, 215, 90, 0.22);
+
+box-shadow:
+inset 0 1px 0 rgba(255, 255, 255, 0.04),
+0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+.final-score-number {
+font-size: 52px;
+line-height: 1;
+font-weight: 900;
+
+color: #f5c84b;
+
+text-shadow:
+0 0 25px rgba(245, 200, 75, 0.25);
+}
+
+.final-score-divider {
+font-size: 34px;
+font-weight: 400;
+color: rgba(255, 255, 255, 0.3);
+}
+
+.final-score-total {
+font-size: 32px;
+font-weight: 700;
+color: rgba(255, 255, 255, 0.75);
+}
+
+.victory-subtitle {
+margin: 0 0 28px;
+color: rgba(255, 255, 255, 0.42);
+font-size: 13px;
+letter-spacing: 0.03em;
+}
+
+/* ==================================================
+PLAY AGAIN
+================================================== */
+
+.victory-button {
+min-width: 180px;
+
+background: linear-gradient(
+135deg,
+#f5c84b,
+#e6a927
+);
+
+color: #17130a;
+
+border: none;
+
+font-weight: 800;
+
+box-shadow:
+0 8px 25px rgba(230, 169, 39, 0.22);
+
+transition:
+transform 0.2s ease,
+box-shadow 0.2s ease;
+}
+
+.victory-button:hover {
+transform: translateY(-2px);
+
+box-shadow:
+0 12px 32px rgba(230, 169, 39, 0.35);
+}
+
+.victory-button:active {
+transform: translateY(0);
+}
+
+/* ==================================================
+MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+.victory-modal {
+width: calc(100% - 32px);
+padding: 38px 24px 32px;
+}
+
+.victory-icon {
+width: 74px;
+height: 74px;
+font-size: 40px;
+}
+
+.final-score-box {
+margin-top: 24px;
+padding: 16px 24px;
+}
+
+.final-score-number {
+font-size: 46px;
+}
+}
